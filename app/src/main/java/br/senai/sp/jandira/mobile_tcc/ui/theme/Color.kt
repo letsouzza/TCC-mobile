@@ -1,37 +1,48 @@
 package br.senai.sp.jandira.mobile_tcc.ui.theme
-
 import androidx.compose.ui.graphics.Color
 
-// Cores do Tema Claro
-val primaryLight = Color(0xFF316A42)
-val onPrimaryLight = Color(0xFFFFF9EB)
-val primaryContainerLight = Color(0xFFB3F1BF)
-val onPrimaryContainerLight = Color(0xFF16512C)
-val secondaryLight = Color(0xFFFFE6B1)
-val onSecondaryLight = Color(0xFFFFFFFF)
-val secondaryContainerLight = Color(0x5EFFE6B1)
-val onSecondaryContainerLight = Color(0xFFFFEB3B)
-val tertiaryLight = Color(0xFFB9CE5D)
-val onTertiaryLight = Color(0xFFFFFFFF)
-val tertiaryContainerLight = Color(0xFFDBEA98)
-val onTertiaryContainerLight = Color(0xFF404C09)
+// =====================
+// LIGHT THEME
+// =====================
+val primaryLight = Color(0xFF1B4227)          // Verde escuro
+val onPrimaryLight = Color(0xFFFFF9EB)        // Texto branco sobre verde
+val primaryContainerLight = Color(0xFFB9CE5D) // Verde claro como container
+val onPrimaryContainerLight = Color(0xFF1B4227)
+
+val secondaryLight = Color(0xFFFFD65E)        // Amarelo
+val onSecondaryLight = Color(0xFF1B4227)
+val secondaryContainerLight = Color(0xFFFFE6A6)
+val onSecondaryContainerLight = Color(0xFF5A4400)
+
+val tertiaryLight = Color(0xFFFFE6B1)         // Bege
+val onTertiaryLight = Color(0xFF3A2F00)
+val tertiaryContainerLight = Color(0xFFFFF3D6)
+val onTertiaryContainerLight = Color(0xFF4E3F00)
+
 val errorLight = Color(0xFFBA1A1A)
 val onErrorLight = Color(0xFFFFFFFF)
 val errorContainerLight = Color(0xFFFFDAD6)
 val onErrorContainerLight = Color(0xFF93000A)
-val backgroundLight = Color(0xFFF6FBF3)
+
+val backgroundLight = Color(0xFFFFF9EB)       // Fundo claro levemente bege
 val onBackgroundLight = Color(0xFF181D18)
 
-// Cores do Tema Escuro
-val primaryDark = Color(0xFF98D5A4)
+
+
+// =====================
+// DARK THEME
+// =====================
+val primaryDark = Color(0xFF98D5A4)           // Verde claro sobre fundo escuro
 val onPrimaryDark = Color(0xFF00391A)
-val primaryContainerDark = Color(0xFF16512C)
-val onPrimaryContainerDark = Color(0xFFB3F1BF)
-val secondaryDark = Color(0xFFE6C26C)
-val onSecondaryDark = Color(0xFF3E2E00)
-val secondaryContainerDark = Color(0xFF5A4400)
-val onSecondaryContainerDark = Color(0xFFFFDF97)
-val tertiaryDark = Color(0xFFBFCE7E)
+val primaryContainerDark = Color(0xFF1B4227)  // Verde escuro container
+val onPrimaryContainerDark = Color(0xFFB9CE5D)
+
+val secondaryDark = Color(0xFFFFF9EB)         // Amarelo queimado
+val onSecondaryDark = Color(0xFF000000)
+val secondaryContainerDark = Color(0xFFFFE6B1)
+val onSecondaryContainerDark = Color(0xFF1B4227)
+
+val tertiaryDark = Color(0xFFBFCE7E)          // Bege esverdeado
 val onTertiaryDark = Color(0xFF2B3400)
 val tertiaryContainerDark = Color(0xFF404C09)
 val onTertiaryContainerDark = Color(0xFFDBEA98)
@@ -39,5 +50,14 @@ val errorDark = Color(0xFFFFB4AB)
 val onErrorDark = Color(0xFF690005)
 val errorContainerDark = Color(0xFF93000A)
 val onErrorContainerDark = Color(0xFFFFDAD6)
-val backgroundDark = Color(0xFF101510)
+
+val backgroundDark = Color(0xCC1B4227)        // Fundo escuro esverdeado
 val onBackgroundDark = Color(0xFFDFE4DC)
+
+
+
+
+
+
+
+
