@@ -1,15 +1,11 @@
 package br.senai.sp.jandira.mobile_tcc.screens.user
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -39,11 +35,10 @@ import br.senai.sp.jandira.mobile_tcc.R
 import br.senai.sp.jandira.mobile_tcc.ui.theme.poppinsFamily
 
 @Composable
-fun CadastroUser(modifier: Modifier = Modifier) {
+fun CadastroOngs(modifier: Modifier = Modifier) {
 
     var nameState by remember {mutableStateOf("")}
     var emailState by remember {mutableStateOf("")}
-    var cpfState by remember {mutableStateOf("")}
     var telefoneState by remember {mutableStateOf("")}
     var senhaState by remember {mutableStateOf("")}
 
@@ -140,35 +135,6 @@ fun CadastroUser(modifier: Modifier = Modifier) {
                     )
                     Spacer(Modifier.padding(5.dp))
                     OutlinedTextField(
-                        value = cpfState,
-                        onValueChange = { it ->
-                            cpfState = it
-                        },
-                        colors = OutlinedTextFieldDefaults.colors(
-                            unfocusedContainerColor = Color(0xFFFFFFFF),
-                            focusedContainerColor = Color(0xFFFFFFFF),
-                            unfocusedBorderColor = Color(0xFF1B4227),
-                            focusedBorderColor = Color(0xFF1B4227),
-                            focusedTextColor = Color.Black,
-                            unfocusedTextColor = Color.Black
-                        ),
-                        shape = RoundedCornerShape(10.dp),
-                        label = {
-                            Text(
-                                text = stringResource(
-                                    R.string.cpf
-                                ),
-                                fontSize = 20.sp,
-                                fontFamily = poppinsFamily,
-                                color = Color(0x99000000)
-                            )
-                        },
-                        modifier = Modifier
-                            .width(315.dp)
-
-                    )
-                    Spacer(Modifier.padding(5.dp))
-                    OutlinedTextField(
                         value = telefoneState,
                         onValueChange = { it ->
                             telefoneState = it
@@ -224,7 +190,7 @@ fun CadastroUser(modifier: Modifier = Modifier) {
                         modifier = Modifier
                             .width(315.dp)
                     )
-                    Spacer(Modifier.padding(10.dp))
+                    Spacer(Modifier.padding(30.dp))
                     Button(
                         onClick = {},
                         modifier = Modifier
@@ -249,6 +215,6 @@ fun CadastroUser(modifier: Modifier = Modifier) {
 
 @Preview
 @Composable
-private fun CadastroUserPreview() {
-    CadastroUser()
+private fun CadastroOngsPreview() {
+    CadastroOngs()
 }

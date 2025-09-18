@@ -39,11 +39,11 @@ import br.senai.sp.jandira.mobile_tcc.R
 import br.senai.sp.jandira.mobile_tcc.ui.theme.poppinsFamily
 
 @Composable
-fun CadastroUser(modifier: Modifier = Modifier) {
+fun CadastroEmpresa(modifier: Modifier = Modifier) {
 
     var nameState by remember {mutableStateOf("")}
     var emailState by remember {mutableStateOf("")}
-    var cpfState by remember {mutableStateOf("")}
+    var cnpjState by remember {mutableStateOf("")}
     var telefoneState by remember {mutableStateOf("")}
     var senhaState by remember {mutableStateOf("")}
 
@@ -140,9 +140,9 @@ fun CadastroUser(modifier: Modifier = Modifier) {
                     )
                     Spacer(Modifier.padding(5.dp))
                     OutlinedTextField(
-                        value = cpfState,
+                        value = cnpjState,
                         onValueChange = { it ->
-                            cpfState = it
+                            cnpjState = it
                         },
                         colors = OutlinedTextFieldDefaults.colors(
                             unfocusedContainerColor = Color(0xFFFFFFFF),
@@ -156,7 +156,7 @@ fun CadastroUser(modifier: Modifier = Modifier) {
                         label = {
                             Text(
                                 text = stringResource(
-                                    R.string.cpf
+                                    R.string.cnpj
                                 ),
                                 fontSize = 20.sp,
                                 fontFamily = poppinsFamily,
@@ -249,6 +249,6 @@ fun CadastroUser(modifier: Modifier = Modifier) {
 
 @Preview
 @Composable
-private fun CadastroUserPreview() {
-    CadastroUser()
+private fun CadastroEmpresaPreview() {
+    CadastroEmpresa()
 }
