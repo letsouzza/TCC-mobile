@@ -11,5 +11,10 @@
     <string name="cnpj">CNPJ:</string>
     <string name="telefone">Telefone:</string>
     <string name="senha">Senha:</string>
+    <string name="login">Login</string>
+    <string name="esqueci_senha">Esqueci minha senha</string>
+    <string name="escolha_login">Escolha o Login</string>
+    <string name="nao_tem_login">Não tem Login?</string>
+    <string name="entrar">Entrar</string>
 
 </resources>

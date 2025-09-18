@@ -1,11 +1,15 @@
-package br.senai.sp.jandira.mobile_tcc.screens.user
+package br.senai.sp.jandira.mobile_tcc.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -39,15 +43,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.senai.sp.jandira.mobile_tcc.R
+import br.senai.sp.jandira.mobile_tcc.screens.components.LoginDropdown
 import br.senai.sp.jandira.mobile_tcc.ui.theme.poppinsFamily
 
 @Composable
-fun CadastroOngs(modifier: Modifier = Modifier) {
+fun LoginScreen(modifier: Modifier = Modifier) {
 
-    var nameState by remember {mutableStateOf("")}
     var emailState by remember {mutableStateOf("")}
-    var telefoneState by remember {mutableStateOf("")}
     var senhaState by remember {mutableStateOf("")}
+    var tipoLogin by remember { mutableStateOf("") }
     var senhaVisivel by remember { mutableStateOf(false) }
 
     Box(
@@ -56,77 +60,50 @@ fun CadastroOngs(modifier: Modifier = Modifier) {
             .background(Color(0xFF1B4227))
     ){
         Column(
-            modifier.fillMaxSize()
+            modifier= Modifier
+                .fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally
         ){
+            Image(
+                painter = painterResource(R.drawable.logoclara),
+                contentDescription = "",
+                modifier.padding(10.dp).size(305.dp)
+            )
             Card(
                 modifier = Modifier
-                    .padding(horizontal = 20.dp, vertical = 60.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = Color(0xD9FFF9EB)
-                )
+                    .fillMaxWidth()
+                    .height(580.dp),
+                colors = CardDefaults.cardColors(Color(0xFFFFF9EB)),
+                shape = RoundedCornerShape(topStart = 50.dp, topEnd = 50.dp)
             ){
                 Column(
-                    modifier = Modifier
-                        .fillMaxSize(),
-                    horizontalAlignment = Alignment.CenterHorizontally
+                    modifier.fillMaxSize().padding(20.dp)
                 ){
-                    Image(
-                        painter = painterResource(R.drawable.logoescura),
-                        contentDescription = "",
-                        modifier = Modifier
-                            .size(180.dp)
-                    )
-                    Text(
-                        text = stringResource(R.string.cadastre_se),
-                        fontSize = 35.sp,
-                        fontFamily = poppinsFamily,
-                        fontWeight =  FontWeight.Normal,
-                        color = Color(0xFF1B4227)
-                    )
-                    Spacer(Modifier.padding(7.dp))
-                    OutlinedTextField(
-                        value = nameState,
-                        onValueChange = { it ->
-                            nameState = it
-                        },
-                        colors = OutlinedTextFieldDefaults.colors(
-                            unfocusedContainerColor = Color(0xFFFFFFFF),
-                            focusedContainerColor = Color(0xFFFFFFFF),
-                            unfocusedBorderColor = Color(0xFF1B4227),
-                            focusedBorderColor = Color(0xFF1B4227),
-                            focusedTextColor = Color.Black,
-                            unfocusedTextColor = Color.Black
-                        ),
-                        shape = RoundedCornerShape(10.dp),
-                        label = {
-                            Text(
-                                text = stringResource(
-                                    R.string.nome
-                                ),
-                                fontSize = 20.sp,
-                                fontFamily = poppinsFamily,
-                                color = Color(0x99000000)
-                            )
-                        },
-                        modifier = Modifier
-                            .width(315.dp)
-
-                    )
                     Spacer(Modifier.padding(5.dp))
+                    Text(
+                        text= stringResource(R.string.login),
+                        fontSize = 40.sp,
+                        fontFamily = poppinsFamily,
+                        fontWeight = FontWeight.Normal,
+                        color = Color(0xFF1B4227),
+                        modifier= Modifier
+                            .padding(start = 20.dp)
+                    )
+                    Spacer(Modifier.padding(15.dp))
                     OutlinedTextField(
                         value = emailState,
                         onValueChange = { it ->
                             emailState = it
                         },
                         colors = OutlinedTextFieldDefaults.colors(
-                            unfocusedContainerColor = Color(0xFFFFFFFF),
-                            focusedContainerColor = Color(0xFFFFFFFF),
-                            unfocusedBorderColor = Color(0xFF1B4227),
-                            focusedBorderColor = Color(0xFF1B4227),
+                            unfocusedContainerColor = Color(0xFFFFE6B1),
+                            focusedContainerColor = Color(0xFFFFE6B1),
+                            unfocusedBorderColor = Color.Transparent,
+                            focusedBorderColor = Color.Transparent,
                             focusedTextColor = Color.Black,
                             unfocusedTextColor = Color.Black
                         ),
-                        shape = RoundedCornerShape(10.dp),
+                        shape = RoundedCornerShape(30.dp),
                         label = {
                             Text(
                                 text = stringResource(
@@ -138,53 +115,23 @@ fun CadastroOngs(modifier: Modifier = Modifier) {
                             )
                         },
                         modifier = Modifier
-                            .width(315.dp)
-
+                            .fillMaxWidth()
                     )
-                    Spacer(Modifier.padding(5.dp))
-                    OutlinedTextField(
-                        value = telefoneState,
-                        onValueChange = { it ->
-                            telefoneState = it
-                        },
-                        colors = OutlinedTextFieldDefaults.colors(
-                            unfocusedContainerColor = Color(0xFFFFFFFF),
-                            focusedContainerColor = Color(0xFFFFFFFF),
-                            unfocusedBorderColor = Color(0xFF1B4227),
-                            focusedBorderColor = Color(0xFF1B4227),
-                            focusedTextColor = Color.Black,
-                            unfocusedTextColor = Color.Black
-                        ),
-                        shape = RoundedCornerShape(10.dp),
-                        label = {
-                            Text(
-                                text = stringResource(
-                                    R.string.telefone
-                                ),
-                                fontSize = 20.sp,
-                                fontFamily = poppinsFamily,
-                                color = Color(0x99000000)
-                            )
-                        },
-                        modifier = Modifier
-                            .width(315.dp)
-
-                    )
-                    Spacer(Modifier.padding(5.dp))
+                    Spacer(Modifier.padding(10.dp))
                     OutlinedTextField(
                         value = senhaState,
                         onValueChange = { it ->
                             senhaState = it
                         },
                         colors = OutlinedTextFieldDefaults.colors(
-                            unfocusedContainerColor = Color(0xFFFFFFFF),
-                            focusedContainerColor = Color(0xFFFFFFFF),
-                            unfocusedBorderColor = Color(0xFF1B4227),
-                            focusedBorderColor = Color(0xFF1B4227),
+                            unfocusedContainerColor = Color(0xFFFFE6B1),
+                            focusedContainerColor = Color(0xFFFFE6B1),
+                            unfocusedBorderColor = Color.Transparent,
+                            focusedBorderColor = Color.Transparent,
                             focusedTextColor = Color.Black,
                             unfocusedTextColor = Color.Black
                         ),
-                        shape = RoundedCornerShape(10.dp),
+                        shape = RoundedCornerShape(30.dp),
                         trailingIcon = {
                             val icon = if (senhaVisivel) Icons.Default.Visibility else Icons.Default.VisibilityOff
 
@@ -210,23 +157,59 @@ fun CadastroOngs(modifier: Modifier = Modifier) {
                             )
                         },
                         modifier = Modifier
-                            .width(315.dp)
+                            .fillMaxWidth()
                     )
-                    Spacer(Modifier.padding(30.dp))
+                    Spacer(Modifier.padding(5.dp))
+                    Text(
+                        text = stringResource(R.string.esqueci_senha),
+                        fontSize = 14.sp,
+                        fontFamily = poppinsFamily,
+                        fontWeight = FontWeight.Bold,
+                        color = Color(0xFF1B4227),
+                        modifier = Modifier
+                            .align(Alignment.End)
+                            .padding(end = 25.dp)
+                    )
+                    Column {
+                        LoginDropdown()
+                    }
+                    Spacer(Modifier.padding(5.dp))
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center
+                    ){
+                        Text(
+                            text = stringResource(R.string.nao_tem_login),
+                            fontSize = 16.sp,
+                            fontFamily = poppinsFamily,
+                            fontWeight = FontWeight.Normal,
+                            color = Color.Black,
+                            modifier = Modifier
+                                .padding(end = 5.dp)
+                        )
+                        Text(
+                            text = stringResource(R.string.cadastre_se),
+                            fontSize = 16.sp,
+                            fontFamily = poppinsFamily,
+                            fontWeight = FontWeight.Bold,
+                            color = Color(0xFF1B4227)
+                        )
+                    }
                     Button(
                         onClick = {},
                         modifier = Modifier
-                            .width(230.dp),
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = Color(0xFFFFDA8B)
-                        )
+                            .align(Alignment.CenterHorizontally)
+                            .padding(top = 30.dp)
+                            .width(180.dp),
+                        colors = ButtonDefaults.buttonColors(Color(0xFF1B4227)),
                     ) {
                         Text(
-                            text = stringResource(R.string.cadastrar),
+                            text = stringResource(R.string.entrar),
                             fontSize = 20.sp,
                             fontFamily = poppinsFamily,
-                            fontWeight =  FontWeight.Normal,
-                            color = Color.Black
+                            color = Color.White
+
                         )
                     }
                 }
@@ -237,6 +220,6 @@ fun CadastroOngs(modifier: Modifier = Modifier) {
 
 @Preview
 @Composable
-private fun CadastroOngsPreview() {
-    CadastroOngs()
+private fun LoginScreenPreview() {
+    LoginScreen()
 }
